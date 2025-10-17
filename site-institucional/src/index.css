@@ -3,7 +3,7 @@
   --surface-color: #1e1e1e;
   --primary-color: #ffffff;
   --text-color: #e0e0e0;
-  --text-secondary-color: #b3b3b3;
+  --text-secondary-color: #a0a0a0;
   --green-accent: #2ed573;
   --orange-accent: #ffa500;
 }
@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
@@ -21,19 +25,16 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
 
 .section-title {
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
+  font-weight: 700;
   margin-bottom: 3rem;
   position: relative;
   color: var(--primary-color);
@@ -42,18 +43,30 @@ html {
 .section-title::after {
   content: "";
   display: block;
-  width: 80px;
+  width: 70px;
   height: 4px;
   background-color: var(--green-accent);
-  margin: 0.5rem auto 0;
+  margin: 0.75rem auto 0;
 }
 
-/* Estilos para Mobile */
-@media screen and (max-width: 768px) {
+/* --- Media Queries Globais --- */
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+  .container {
+    padding: 3rem 1.5rem;
+  }
   .section-title {
     font-size: 2.2rem;
   }
+}
+
+/* Celulares */
+@media screen and (max-width: 768px) {
   .container {
     padding: 3rem 1rem;
+  }
+  .section-title {
+    font-size: 2rem;
   }
 }

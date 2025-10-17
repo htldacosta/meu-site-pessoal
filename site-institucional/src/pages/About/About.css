@@ -1,0 +1,37 @@
+/* Estilos do AnimatedSection */
+.animated-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animated-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Estilos da Página Sobre */
+.about-content {
+  background-color: var(--surface-color);
+  padding: 2.5rem; /* Aumenta o espaçamento interno */
+  margin: 0 auto 2rem auto; /* Centraliza e adiciona espaço */
+  border-radius: 10px;
+  max-width: 800px; /* Limita a largura para melhor leitura */
+}
+.about-content h2 {
+  color: var(--green-accent);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+.about-content p {
+  color: var(--text-secondary-color);
+  line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .about-content {
+    padding: 1.5rem;
+  }
+  .about-content p {
+    font-size: 1rem;
+  }
+}

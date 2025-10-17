@@ -1,0 +1,216 @@
+/* 1. Seção Hero */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: calc(100vh - 80px);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.hero-content {
+  flex: 1;
+}
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary-color);
+  margin-bottom: 2.5rem;
+}
+.hero-button {
+  border: 1px solid var(--green-accent);
+  color: var(--green-accent);
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.hero-button:hover {
+  background-color: var(--green-accent);
+  color: #000;
+}
+.hero-image-container {
+  flex-shrink: 0;
+}
+.hero-image {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--green-accent);
+}
+
+/* 2. Seção de Projetos da Home */
+.home-projects-section {
+  padding-top: 4rem;
+}
+.home-projects-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.project-preview-card {
+  background-color: var(--surface-color);
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.project-preview-card:hover {
+  transform: translateY(-5px);
+}
+.home-projects-button {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 0;
+  border: 1px solid var(--green-accent);
+  color: var(--green-accent);
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.home-projects-button:hover {
+  background-color: var(--green-accent);
+  color: #000;
+}
+
+/* 3. Seção de Competências com Carrossel */
+.skills-section {
+  padding: 4rem 0;
+}
+.skills-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+.skills-track {
+  display: flex;
+  width: calc(
+    200px * 16
+  ); /* (180px de largura + 2rem de gap) * 8 slides * 2 para o loop */
+  animation: scroll 30s linear infinite;
+}
+.skills-carousel:hover .skills-track {
+  animation-play-state: paused;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 8));
+  }
+}
+.skill-slide {
+  width: 180px;
+  height: 120px;
+  margin: 0 1rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: blur(1.5px);
+}
+.skill-slide:hover {
+  filter: blur(0);
+  transform: scale(1.1);
+}
+/* Estilização para o <img> do ícone */
+.skill-icon {
+  height: 60px;
+  width: auto;
+}
+
+/* 4. Seção Sobre Mim da Home */
+.home-about-section {
+  padding-bottom: 4rem;
+}
+.home-about-card {
+  background-color: var(--surface-color);
+  padding: 2.5rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.home-about-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.home-about-card p {
+  color: var(--text-secondary-color);
+  margin-bottom: 2rem;
+}
+.home-about-button {
+  background-color: var(--orange-accent);
+  color: #000;
+  padding: 0.8rem 2.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+.home-about-button:hover {
+  opacity: 0.9;
+}
+
+/* --- Media Queries para Responsividade da Home --- */
+@media screen and (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  .home-projects-preview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-image {
+    width: 220px;
+    height: 220px;
+  }
+  .home-projects-preview {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,27 @@
+.footer {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-socials {
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  color: var(--text-secondary-color);
+  font-size: 2rem;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+.social-icon:hover {
+  color: var(--green-accent);
+}
+
+.footer-text {
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+}

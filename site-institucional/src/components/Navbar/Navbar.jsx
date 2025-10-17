@@ -5,27 +5,26 @@ import "./Navbar.css";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMobileMenu = () => setMenuOpen(false);
+
   return (
     <header className="navbar">
       <div className="navbar-container">
-        <NavLink
-          to="/"
-          className="navbar-logo"
-          onClick={() => setMenuOpen(false)}
-        >
+        <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
           HitaluDev
         </NavLink>
         <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
           <i className={menuOpen ? "fas fa-times" : "fas fa-bars"} />
         </div>
         <nav className={menuOpen ? "nav-menu active" : "nav-menu"}>
-          <ul className="nav-menu-items" onClick={() => setMenuOpen(false)}>
+          <ul className="nav-menu-items">
             <li className="nav-item">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   "nav-links" + (isActive ? " active" : "")
                 }
+                onClick={closeMobileMenu}
               >
                 Início
               </NavLink>
@@ -36,6 +35,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   "nav-links" + (isActive ? " active" : "")
                 }
+                onClick={closeMobileMenu}
               >
                 Projetos
               </NavLink>
@@ -46,6 +46,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   "nav-links" + (isActive ? " active" : "")
                 }
+                onClick={closeMobileMenu}
               >
                 Sobre
               </NavLink>
@@ -56,6 +57,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   "nav-links" + (isActive ? " active" : "")
                 }
+                onClick={closeMobileMenu}
               >
                 Contato
               </NavLink>
