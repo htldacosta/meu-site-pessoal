@@ -1,4 +1,4 @@
-/* Estilos do AnimatedSection */
+/* Estilos para o componente AnimatedSection */
 .animated-section {
   opacity: 0;
   transform: translateY(50px);
@@ -8,13 +8,12 @@
   opacity: 1;
   transform: translateY(0);
 }
-/* Estilos da Página Sobre */
+
 .about-content {
   background-color: var(--surface-color);
-  padding: 2.5rem; /* Aumenta o espaçamento interno */
-  margin: 0 auto 2rem auto; /* Centraliza e adiciona espaço */
+  padding: 2rem;
+  margin-bottom: 2rem;
   border-radius: 10px;
-  max-width: 800px; /* Limita a largura para melhor leitura */
 }
 .about-content h2 {
   color: var(--green-accent);
@@ -23,15 +22,6 @@
 }
 .about-content p {
   color: var(--text-secondary-color);
-  line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+  line-height: 1.7;
   font-size: 1.1rem;
-}
-
-@media screen and (max-width: 768px) {
-  .about-content {
-    padding: 1.5rem;
-  }
-  .about-content p {
-    font-size: 1rem;
-  }
 }

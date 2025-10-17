@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-
-// -------------------- ÁREA DE EDIÇÃO DOS ÍCONES --------------------
-// Para editar, adicionar ou remover ícones, modifique a lista abaixo.
-// Vá em https://devicon.dev/, encontre o ícone que deseja,
-// clique nele e copie o "SVG link for use in <img> tags".
-// Cole o link aqui.
+import minhaFoto from "../../assets/minha-foto.jpg";
 
 const skills = [
   {
@@ -70,7 +65,6 @@ const skills = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
   },
 ];
-// -------------------- FIM DA ÁREA DE EDIÇÃO --------------------
 
 const Home = () => {
   return (
@@ -85,11 +79,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="hero-image-container">
-          <img
-            src="/profile-pic.jpg"
-            alt="Hitalu da Costa"
-            className="hero-image"
-          />
+          <img src={minhaFoto} alt="Hitalu da Costa" className="hero-image" />
         </div>
       </div>
 
