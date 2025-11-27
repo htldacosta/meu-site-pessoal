@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import { BaseProps } from "../../types"; // Importando o tipo que criamos
+import React, { useEffect, useRef, useState, ReactNode } from "react";
 import "./AnimatedSection.css";
 
-interface AnimatedSectionProps extends BaseProps {
-  // Adicione outras props específicas se houver, ex: delay?: number
+interface AnimatedSectionProps {
+  children: ReactNode;
+  className?: string;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({
@@ -24,9 +24,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     }
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
+      if (currentElement) observer.unobserve(currentElement);
     };
   }, []);
 

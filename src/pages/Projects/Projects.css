@@ -1,70 +1,48 @@
+/* Mantém o grid para desktop */
 .projects-grid {
   display: grid;
-  /* Colunas responsivas: se adapta de 1 a 3 colunas */
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
-.project-card {
-  background-color: var(--surface-color);
-  padding: 2rem;
-  border-radius: 10px;
+
+/* Estilos do Carrossel (Mobile) */
+.carousel-container {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: transform 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
 }
-.project-card:hover {
-  transform: translateY(-5px);
+
+.carousel-content {
+  flex: 1;
+  /* Garante altura fixa para não pular layout */
+  min-height: 400px;
 }
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+
+.carousel-btn {
+  background: transparent;
+  border: 1px solid var(--text-color); /* Ajuste a variável de cor */
+  color: var(--text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
-.project-card p {
-  color: var(--text-secondary-color);
-  line-height: 1.6;
-  flex-grow: 1;
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .projects-grid {
+    display: none;
+  }
+  .carousel-container {
+    display: flex;
+  }
 }
-.project-tags {
-  margin: 1.5rem 0;
-}
-.tag {
-  background-color: #333;
-  color: var(--text-secondary-color);
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
-  display: inline-block;
-}
-.project-links {
-  display: flex;
-  gap: 1rem;
-  margin-top: auto; /* Alinha os botões na base */
-}
-.project-btn-repo,
-.project-btn-test {
-  padding: 0.7rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  text-align: center;
-  transition: all 0.3s ease;
-  flex-grow: 1;
-}
-.project-btn-repo {
-  border: 1px solid var(--green-accent);
-  color: var(--green-accent);
-}
-.project-btn-repo:hover {
-  background-color: var(--green-accent);
-  color: #000;
-}
-.project-btn-test {
-  background-color: var(--orange-accent);
-  color: #000;
-}
-.project-btn-test:hover {
-  opacity: 0.8;
+
+@media (min-width: 769px) {
+  .carousel-container {
+    display: none;
+  }
 }
