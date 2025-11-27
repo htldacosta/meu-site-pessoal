@@ -1,0 +1,107 @@
+.newsletter-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 160px); /* Altura da tela menos header e footer */
+  justify-content: center; /* Centraliza verticalmente */
+}
+
+.newsletter-wrapper {
+  width: 100%;
+  max-width: 600px; /* Um pouco menor que o contato */
+  background-color: var(--surface-color);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-description {
+  text-align: center;
+  color: var(--text-secondary-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaço entre os campos */
+}
+
+/* Estilos dos campos (reutilizados) */
+.form-group input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #444;
+  padding: 0.8rem 0.2rem; /* Pequeno padding lateral */
+  color: var(--text-color);
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus {
+  outline: none;
+  border-bottom-color: var(--green-accent);
+}
+.form-group input::placeholder {
+  /* Estilo do placeholder */
+  color: #666;
+}
+
+/* Borda vermelha para erro */
+.form-group input[aria-invalid="true"] {
+  border-bottom-color: #ff6b6b; /* Vermelho mais suave */
+}
+
+/* Botão de Envio */
+.form-buttons {
+  display: flex;
+  margin-top: 1rem;
+}
+.btn-send-newsletter {
+  flex-grow: 1; /* Ocupa toda a largura */
+  background-color: var(--green-accent);
+  color: #000;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+.btn-send-newsletter:hover {
+  background-color: #25a25a;
+}
+.btn-send-newsletter:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Mensagem de erro específica do campo */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  min-height: 1.2em; /* Reserva espaço para não pular layout */
+}
+
+/* Mensagem de status geral (abaixo do formulário) */
+.status-message {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  min-height: 1.5em; /* Reserva espaço */
+}
+/* Cor laranja para o aviso de desenvolvimento */
+.status-message:not(.error) {
+  color: var(--orange-accent);
+}
+/* Cor vermelha para erros gerais do formulário */
+.status-message.error {
+  color: #ff6b6b;
+}
