@@ -1,110 +1,149 @@
-.contact-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Grid padrão para Desktop */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
 }
-.contact-wrapper {
-  width: 100%;
-  max-width: 700px;
+
+.project-card {
   background-color: var(--surface-color);
   padding: 2rem;
   border-radius: 10px;
-}
-.contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  height: 100%;
+  transition: transform 0.3s ease;
+  /* Garante altura mínima consistente no carrossel */
+  min-height: 350px;
 }
 
-/* NOVO: Wrapper para campo + contador */
-.form-group {
-  position: relative;
+.project-card:hover {
+  transform: translateY(-5px);
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #444;
-  padding: 0.8rem 0;
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--text-color);
-  font-size: 1.1rem;
-  transition: border-color 0.3s ease;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-bottom-color: var(--green-accent);
-}
-.form-group textarea {
-  min-height: 140px;
-  resize: vertical;
 }
 
-/* NOVO: Estilo da borda em erro */
-.form-group input[aria-invalid="true"],
-.form-group textarea[aria-invalid="true"] {
-  border-bottom-color: #ff4d4d;
+.project-card p {
+  color: var(--text-secondary-color);
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
-.form-buttons {
+.project-tags {
+  margin: 1.5rem 0;
+}
+
+.tag {
+  background-color: #333;
+  color: #fff; /* Ajustei para leitura melhor */
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.project-links {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
-}
-.btn-send,
-.btn-whatsapp {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-.btn-send {
-  background-color: transparent;
-  border: 1px solid var(--orange-accent);
-  color: var(--orange-accent);
-}
-.btn-send:hover {
-  background-color: var(--orange-accent);
-  color: #000;
-}
-.btn-send:disabled {
-  border-color: #555;
-  color: #555;
-  background-color: transparent;
-  cursor: not-allowed;
+  margin-top: auto;
 }
 
-.btn-whatsapp {
+.project-btn-repo,
+.project-btn-test {
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.project-btn-repo {
+  border: 1px solid var(--green-accent);
+  color: var(--green-accent);
+}
+
+.project-btn-repo:hover {
   background-color: var(--green-accent);
   color: #000;
 }
-.btn-whatsapp:hover {
-  background-color: #25a25a;
+
+.project-btn-test {
+  background-color: var(--orange-accent);
+  color: #000;
 }
-.status-message {
+
+.project-btn-test:hover {
+  opacity: 0.8;
+}
+
+/* --- Estilos do Carrossel (Mobile) --- */
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-content {
+  flex: 1;
+  max-width: 100%;
+}
+
+.carousel-btn {
+  background-color: transparent;
+  border: 1px solid var(--text-secondary-color);
+  color: var(--text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background-color: var(--green-accent);
+  color: black;
+  border-color: var(--green-accent);
+}
+
+/* Indicador numérico simples */
+.carousel-indicators {
   text-align: center;
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-}
-
-/* NOVO: Estilo da mensagem de erro */
-.error-message {
-  color: #ff4d4d;
-  font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-/* NOVO: Estilo do contador de caracteres */
-.char-counter {
-  text-align: right;
-  font-size: 0.8rem;
+  margin-top: 1rem;
   color: var(--text-secondary-color);
-  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+  .projects-grid {
+    display: none; /* Esconde grid no mobile */
+  }
+
+  .carousel-container {
+    display: flex; /* Mostra carrossel no mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-container {
+    display: none; /* Esconde carrossel no desktop */
+  }
 }
