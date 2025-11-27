@@ -1,3 +1,14 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Faz o conteúdo principal crescer e ocupar o espaço vazio */
+  padding-top: 80px; /* Espaço para a Navbar não cobrir o conteúdo (ajuste conforme a altura da sua navbar) */
+}
+
 :root {
   --background-color: #121212;
   --surface-color: #1e1e1e;
